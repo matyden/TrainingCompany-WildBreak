@@ -64,12 +64,19 @@
     background: #181818 !important;
     color: #f1f1f1 !important;
 }
+.dark-theme body {
+    background: #181818 !important;
+    color: #f1f1f1 !important;
+}
 .dark-theme header {
     background: #232323 !important;
 }
 .dark-theme .info-card {
     background: #232323;
     color: #f1f1f1;
+}
+.dark-theme .info-card-content h3 {
+    color: #fff;
 }
 .dark-theme .info-card-content p {
     color: #ccc;

@@ -2,7 +2,7 @@
 // Скрипт для переключения темы сайта (день/ночь)
 (function() {
   const THEME_KEY = 'wildbreak-theme';
-  const root = document.documentElement;
+  const root = document.body;
   const btnId = 'themeToggleBtn';
 
   function setTheme(theme) {
@@ -23,15 +23,13 @@
     setTheme(isDark ? 'light' : 'dark');
   }
 
-  // Инициализация
   document.addEventListener('DOMContentLoaded', function() {
-    // Кнопка может быть добавлена динамически
     const btn = document.getElementById(btnId);
     if (btn) {
       btn.addEventListener('click', toggleTheme);
     }
-    // Установить тему из localStorage
+    // По умолчанию — dark, если не сохранено в localStorage
     const saved = localStorage.getItem(THEME_KEY);
-    setTheme(saved === 'dark' ? 'dark' : 'light');
+    setTheme(saved === 'light' ? 'light' : 'dark');
   });
 })();
