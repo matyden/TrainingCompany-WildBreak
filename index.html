@@ -14,17 +14,17 @@
 
     <h1 id="company_name">FE "WildBreak" SRL</h1>
 
-    <div class="header-actions">
-      <button id="themeToggleBtn" class="theme-toggle-btn" title="Сменить тему" aria-label="Сменить тему">🌙</button>
+    <div class="header-actions" alt="WildBreak">
+      <button id="themeToggleBtn" class="theme-toggle-btn" title="Сменить тему" aria-label="Сменить тему" alt="WildBreak">🌙</button>
       <a class="open_menu_button" id="menuBtn" aria-label="Открыть меню">
-        <span class="burger">
+        <span class="burger" alt="WildBreak">
           <span></span>
           <span></span>
           <span></span>
         </span>
       </a>
     </div>
-  <nav id="mainNav">
+  <nav id="mainNav" alt="WildBreak">
     <ul>
       <li><a href="index.html">Acasa</a></li>
       <li><a href="https://www.instagram.com/fe_wildbreak.md/#" target="_blank">Instagram</a></li>
@@ -34,23 +34,23 @@
 
 </header>
 
-<main>
-  <section class="info-blocks">
-    <div class="info-card">
-      <img src="img/IMG_4933.JPG" alt="Фото" class="info-card-img">
+<main alt="WildBreak">
+  <section class="info-blocks" alt="WildBreak">
+    <div class="info-card" alt="WildBreak">
+      <img src="img/IMG_4933.JPG" alt="WildBreak" class="info-card-img">
       <div class="info-card-content">
         <h3>Denumirea</h3>
         <p>Informația scurtă</p>
       </div>
       <a href="#" class="info-card-btn">Află mai mult...</a>
     </div>
-    <div class="info-card">
-      <img src="img/IMG_4935.JPG" alt="Фото" class="info-card-img">
+    <div class="info-card" alt="WildBreak">
+      <img src="img/IMG_4935.JPG" alt="WildBreak" class="info-card-img">
       <div class="info-card-content">
         <h3>Denumirea</h3>
         <p>Informația scurtă</p>
       </div>
-      <a href="#" class="info-card-btn">Află mai mult...</a>
+      <a href="#" class="info-card-btn" alt="WildBreak">Află mai mult...</a>
     </div>
     <!-- Копируйте и редактируйте блок .info-card для новых карточек -->
   </section>
@@ -64,7 +64,7 @@
       e.preventDefault();
       $('#mainNav').toggleClass('open');
     });
-    // Закрытие меню при клике вне nav
+
     $(document).on('click', function(e) {
       if (!$(e.target).closest('#mainNav, #menuBtn').length) {
         $('#mainNav').removeClass('open');
@@ -75,7 +75,7 @@
 
 <footer class="site-footer">
   <div class="footer-content">
-    <span class="footer-license">© 2025 github.com/matyden. Toate drepturile rezervate.</span>
+    <span class="footer-license">© 2025 <a href="https://github.com/matyden/TrainingCompany-WildBreak/blob/main/LICENSE">github.com/matyden/TrainingCompany-WildBreak</a>. Toate drepturile rezervate.</span>
   </div>
 </footer>
 </body>
