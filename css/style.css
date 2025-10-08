@@ -11,9 +11,9 @@
 /* --- Footer Styles --- */
 .site-footer {
     width: 100%;
-    background: #d1d1d6;
+    background: #bfbfc2;
     min-height: 70px;
-    padding: 2vh;
+    padding: 0vh;
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -27,7 +27,7 @@
     align-items: flex-end;
     justify-content: center;
 }
-.footer-license {
+.light-theme .footer-license {
     width: 100%;
     text-align: center;
     color: #555;
@@ -61,11 +61,30 @@
     transition: background 0.2s, color 0.2s;
 }
 .theme-toggle-btn:hover {
-    background: #222;
+    background: #111;
     color: #fff;
 }
 
 /* --- Theme Styles --- */
+.dark-theme .theme-toggle-btn:hover {
+    background: #ccc;
+    color: #fff;
+}
+.dark-theme .site-footer {
+    background: #333333 !important;
+}
+.dark-theme .footer-content{
+    color: #c3c3c3;
+    margin-bottom: 2vh;
+}
+.dark-theme .footer-content a{
+    color: #2fd5ffa4;
+    text-decoration: none;
+}
+.light-theme .footer-content a{
+    color: #0066cc;
+    text-decoration: none;
+}
 .dark-theme {
     background: #181818 !important;
     color: #f1f1f1 !important;
@@ -264,11 +283,11 @@
     }
 }
 #logo_img {
-    width: 20vh;
+    width: 50vh;
     min-width: 90px;
     max-width: 150px;
-    margin: -3vh;
-    padding: 0;
+    margin: -4vh;
+    padding: 0vh;
     display: block;
     position: absolute;
     top: 10px;
@@ -324,9 +343,9 @@ header {
     padding: 0;
     transition: background 0.2s;
 }
-.open_menu_button:hover {
+/*.open_menu_button:hover {
     background: #444;
-}
+} */
 .open_menu_button .burger {
     width: 32px;
     height: 24px;
@@ -338,7 +357,7 @@ header {
     display: block;
     height: 4px;
     width: 100%;
-    background: #222;
+    background: #666;
     border-radius: 2px;
     transition: background 0.2s;
 }
@@ -388,5 +407,3 @@ nav ul li a:hover {
     background: #222;
     color: #fff;
 }
-
-
