@@ -35,16 +35,6 @@
     padding: 18px 0 12px 0;
     letter-spacing: 0.02em;
 }
-@media (max-width: 600px) {
-    .site-footer {
-        min-height: 54px;
-        margin-top: 30px;
-    }
-    .footer-license {
-        font-size: 0.98em;
-        padding: 12px 0 8px 0;
-    }
-}
 /* --- Theme Toggle Button --- */
 .theme-toggle-btn {
     width: 44px;
@@ -205,83 +195,7 @@
     background: #177273;
     color: #fff;
 }
-
-@media (max-width: 900px) {
-    .info-blocks {
-        gap: 18px;
-    }
-    .info-card {
-        width: 90vw;
-        max-width: 340px;
-    }
-}
-@media (max-width: 600px) {
-    .info-blocks {
-        flex-direction: column;
-        align-items: center;
-        gap: 14px;
-        margin: 18px 0;
-    }
-    .info-card {
-        width: 96vw;
-        min-height: 340px;
-        max-width: 99vw;
-        border-radius: 10px;
-    }
-    .info-card-content {
-        padding: 14px 10px 44px 10px;
-    }
-    .info-card-btn {
-        left: 10px;
-        bottom: 10px;
-        padding: 9px 18px;
-        font-size: 0.98em;
-    }
-    .info-card-img {
-        height: 120px;
-    }
-}
-@media (max-width: 600px) {
-    #logo_img {
-        width: 20vh;
-        min-width: 70px;
-        max-width: 110px;
-        top: 8px;
-        left: 8px;
-        margin: 10vh;
-    }
-    header {
-        height: 44px;
-        padding: 0 4px;
-    }
-    .open_menu_button {
-        top: 6px;
-        right: 6px;
-        width: 48px;
-        height: 48px;
-    }
-    .open_menu_button .burger {
-        width: 32px;
-        height: 22px;
-    }
-    nav {
-        top: 44px;
-        right: 2px;
-        min-width: 120px;
-        padding: 6px 0;
-        border-radius: 6px;
-    }
-    nav ul {
-        gap: 6px;
-    }
-    nav ul li {
-        padding: 0 8px;
-    }
-    nav ul li a {
-        padding: 8px 0;
-        font-size: 1em;
-    }
-}
+/* --- General Styles --- */
 #logo_img {
     width: 50vh;
     min-width: 90px;
@@ -406,4 +320,123 @@ nav ul li a {
 nav ul li a:hover {
     background: #222;
     color: #fff;
+}
+
+/* --- Mobile: precise layout for phones (<=600px) --- */
+@media (max-width: 600px) {
+    /* Header */
+    header {
+        height: 68px;
+        padding: 0 12px;
+        z-index: 1200;
+    }
+    #logo_img {
+        width: 120px; /* fixed size for phones */
+        min-width: 15px;
+        max-width: 150px;
+        top: 11px;
+        left: 5px;
+        margin: -4vh;
+    }
+    #company_name {
+        font-size: 1.02em;
+        margin: 0;
+        padding-left: 104px; /* logo 84 + left 10 + gap 10 = 104 */
+        text-align: left;
+        line-height: 56px;
+    }
+
+    /* Header actions (theme + menu) */
+    .header-actions {
+        position: absolute;
+        top: 6px;
+        right: 8px;
+        gap: 8px;
+        z-index: 1100;
+    }
+    .theme-toggle-btn, .open_menu_button {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+    }
+
+        /* hide header theme button on phones (we move it into mobile nav) */
+        .theme-toggle-btn { display: none; }
+
+        /* mobile theme control inside nav */
+        .mobile-theme-li { display: block; }
+        .mobile-theme-toggle {
+            width: 100%;
+            background: transparent;
+            border: none;
+            color: inherit;
+            text-align: left;
+            padding: 10px 12px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+    .theme-toggle-btn { font-size: 1.15em; }
+    .open_menu_button .burger { width: 28px; height: 20px; }
+    .open_menu_button .burger span { height: 3px; }
+
+    /* Make nav a full-width dropdown under the header */
+    nav {
+            position: fixed;
+            top: 56px; /* directly under header */
+            left: 0;
+            right: 0;
+            border-radius: 0;
+            min-width: auto;
+            padding: 8px 10px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+            touch-action: manipulation;
+    }
+    nav ul { gap: 8px; }
+    nav ul li { padding: 0; }
+    nav ul li a { padding: 12px; border-radius: 6px; }
+
+    /* Main layout: stack cards vertically */
+    main {
+        padding-top: 8px;
+        align-items: stretch;
+        justify-content: flex-start;
+    }
+    .info-blocks {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        margin: 12px auto;
+        max-width: 420px;
+        padding: 0 12px;
+        width: 100%;
+    }
+    .info-card {
+            width: 100%;
+            max-width: 420px;
+            min-height: 300px;
+            border-radius: 12px;
+    }
+    .info-card-img { height: 160px; }
+    .info-card-content { padding: 16px 14px 56px 14px; }
+    .info-card-content h3 { font-size: 1.15em; }
+    .info-card-content p { font-size: 0.98em; }
+    .info-card-btn { left: 14px; bottom: 14px; padding: 10px 18px; }
+
+    /* Footer adjustments */
+    .site-footer { min-height: 54px; margin-top: 24px; }
+    .footer-content { padding: 0 12px; font-size: 2vh;}
+    .light-theme .footer-license, .dark-theme .footer-license { font-size: 0.95em; }
+}
+/* Prevent accidental horizontal overflow and use sensible box-sizing */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+html, body {
+    width: 100%;
+    overflow-x: hidden; /* prevents unwanted horizontal scroll on phones */
+}
+
+/* ensure sections and blocks respect container width */
+.info-blocks {
+    box-sizing: border-box;
 }

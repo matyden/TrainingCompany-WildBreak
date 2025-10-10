@@ -14,8 +14,15 @@
       root.classList.add('light-theme');
     }
     localStorage.setItem(THEME_KEY, theme);
-    const btn = document.getElementById(btnId);
-    if (btn) btn.textContent = theme === 'dark' ? '☀️' : '🌙';
+    // update header button text if present
+    const headerBtn = document.getElementById(btnId);
+    if (headerBtn) headerBtn.textContent = theme === 'dark' ? '☀️' : '🌙';
+    // update any elements with data-theme-toggle (for mobile inside nav)
+    document.querySelectorAll('[data-theme-toggle]').forEach(el => {
+      if (el.tagName === 'BUTTON' || el.tagName === 'A') {
+        el.textContent = theme === 'dark' ? '☀️ Сменить тему' : '🌙 Сменить тему';
+      }
+    });
   }
 
   function toggleTheme() {
@@ -25,9 +32,9 @@
 
   document.addEventListener('DOMContentLoaded', function() {
     const btn = document.getElementById(btnId);
-    if (btn) {
-      btn.addEventListener('click', toggleTheme);
-    }
+    if (btn) btn.addEventListener('click', toggleTheme);
+    // bind mobile nav theme toggle(s)
+    document.querySelectorAll('[data-theme-toggle]').forEach(el => el.addEventListener('click', function(e){ e.preventDefault(); toggleTheme(); }));
     // По умолчанию — dark, если не сохранено в localStorage
     const saved = localStorage.getItem(THEME_KEY);
     setTheme(saved === 'light' ? 'light' : 'dark');
