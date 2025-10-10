@@ -322,6 +322,11 @@ nav ul li a:hover {
     color: #fff;
 }
 
+/* hide mobile-only theme list item by default (visible only on small screens) */
+.mobile-theme-li { display: none !important; }
+/* also hide any data-theme-toggle elements by default (desktop) */
+[data-theme-toggle] { display: none !important; }
+
 /* --- Mobile: precise layout for phones (<=600px) --- */
 @media (max-width: 600px) {
     /* Header */
@@ -363,18 +368,19 @@ nav ul li a:hover {
         /* hide header theme button on phones (we move it into mobile nav) */
         .theme-toggle-btn { display: none; }
 
-        /* mobile theme control inside nav */
-        .mobile-theme-li { display: block; }
-        .mobile-theme-toggle {
-            width: 100%;
-            background: transparent;
-            border: none;
-            color: inherit;
-            text-align: left;
-            padding: 10px 12px;
-            font-size: 1em;
-            cursor: pointer;
-        }
+                /* mobile theme control inside nav */
+                .mobile-theme-li { display: list-item !important; }
+                [data-theme-toggle] { display: inline-block !important; }
+                .mobile-theme-toggle {
+                    width: 100%;
+                    background: transparent;
+                    border: none;
+                    color: inherit;
+                    text-align: left;
+                    padding: 10px 12px;
+                    font-size: 1em;
+                    cursor: pointer;
+                }
     .theme-toggle-btn { font-size: 1.15em; }
     .open_menu_button .burger { width: 28px; height: 20px; }
     .open_menu_button .burger span { height: 3px; }

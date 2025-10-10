@@ -20,7 +20,7 @@
     // update any elements with data-theme-toggle (for mobile inside nav)
     document.querySelectorAll('[data-theme-toggle]').forEach(el => {
       if (el.tagName === 'BUTTON' || el.tagName === 'A') {
-        el.textContent = theme === 'dark' ? '☀️ Сменить тему' : '🌙 Сменить тему';
+        el.textContent = theme === 'dark' ? '☀️ Change theme' : '🌙 Change theme';
       }
     });
   }
